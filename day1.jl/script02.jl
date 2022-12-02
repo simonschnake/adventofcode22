@@ -1,4 +1,4 @@
-input = readlines("day1_1/input.txt")
+input = readlines("day1.jl/input.txt")
 
 function elves_summed_calories(input)
     cur_calories = 0
@@ -18,10 +18,10 @@ end
 
 calories = elves_summed_calories(input)
 
-sort!(calories)
+sort!(calories, rev=true)
 
-total_calories = sum(calories[end-2:end])
-max_calories = calories[end]
+total_calories = sum(calories[1:3])
+max_calories = calories[1]
 
 println("max calories carried by a elve are $max_calories") 
 println("total calories of top three elves are $total_calories")
