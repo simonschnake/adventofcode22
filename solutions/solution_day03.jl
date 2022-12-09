@@ -1,6 +1,6 @@
 # First Part
 
-input = readlines("day3.jl/input.txt")
+input = readlines("test.txt")
 
 function priority(x::Char)
     """
@@ -32,6 +32,7 @@ function priority(x::String)
     priority(chars)
 end
 
+@show priority.(input)
 total_priorities = sum(priority.(input))
 
 @info "Result of first part: the total priorities are $total_priorities"
@@ -50,3 +51,9 @@ total_priorities = sum(priorities)
 
 @info "Result of second part: the total priorities are $total_priorities"
 
+
+
+length(input[1])
+
+input[1][01:12]
+input[1][13:24]

@@ -1,4 +1,4 @@
-input = readlines("day1.jl/input.txt")
+input = readlines("inputs/input_day01.txt")
 
 function elves_summed_calories(input)
     cur_calories = 0
