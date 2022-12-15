@@ -3,3 +3,4 @@ inputs
 solutions/output
 *.dSYM
 .vscode
+.DS_Store
