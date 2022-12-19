@@ -61,15 +61,15 @@ function get_confirmed(inputs, target_y)
     confirmed, confirmed_beacon
 end
 
-confirmed, confirmed_beacon = get_confirmed(inputs, target_y)
+using BenchmarkTools
+
+@benchmark confirmed, confirmed_beacon = get_confirmed(inputs, target_y)
 
 confirmed = Set(vcat(confirmed...))
 
 @show result_part_1 = length(setdiff(confirmed, Set(confirmed_beacon)))
 
 r = 4000000
-
-using BenchmarkTools
 
 @benchmark get_confirmed(inputs, 11)
 
@@ -103,6 +103,14 @@ function is_complete(confirmed, end_val)
 
     return false
 end
+
+a = Set{UnitRange{Int64}}()
+
+push!(a, 1:6)
+
+push!(a, 2:6)
+@benchmark is_complete(confirmed, 1_000_000)
+
 
 for y in 1:4_000_000
     confirmed, _ = get_confirmed(inputs, y)

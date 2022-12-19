@@ -13,4 +13,3 @@ uniqe_14_characters(pos) = (length(unique(input[pos:pos+13])) == 14)
 result = findfirst(uniqe_14_characters, 1:length(input)-14) + 13
 
 @info "In part two: the result is $result"
-
